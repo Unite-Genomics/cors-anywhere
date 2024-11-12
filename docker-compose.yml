@@ -1,0 +1,12 @@
+services:
+  web-cors-proxy:
+    container_name: cors-anywhere
+    image: cors-anywhere:latest
+    command: 'sh -c "PORT=4800 yarn start"'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:4800"
