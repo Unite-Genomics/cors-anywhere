@@ -48,7 +48,7 @@ Live examples:
 ### Client
 
 To use the API, just prefix the URL with the API URL. Take a look at [demo.html](demo.html) for an example.
-A concise summary of the documentation is provided at [lib/help.txt](lib/help.txt).
+A concise summary of the documentation is provided at [help.txt](help.txt).
 
 **Note: as of February 2021, access to the demo server requires an opt-in**,
 see: https://github.com/Rob--W/cors-anywhere/issues/301
