@@ -18,9 +18,17 @@ To get list of provider endpoints that are allowed to be accessed we can provide
 * Database connection though env
 * Provide `json` file that has list of all endpoints
 
-  This list is generated from dumping data from database using
+  This list is generated from dumping data from database using 
 
-    `python manage.py dumpdata core.Provider | tail -n +9 | jq '[ .[] | select(.fields.use_proxy == true) | .fields.FHIR_api_base_uri]'`
+    `[ $(basename "$PWD") "==" 'piece' ] && python manage.py dumpdata core.Provider | tail -n +9 | jq '[ .[] | select(.fields.use_proxy == true) | .fields.FHIR_api_base_uri]'`
+
+``` 
+  [
+    "https://hill.mmi.prod.fhir.ema-api.com/fhir/r4/",
+    "https://opticalillusions.ef.prod.fhir.ema-api.com/fhir/r4/",
+    ...
+  ]
+```
 
   Save dumped data into `core_provider.json` and set value `PROVIDER_JSON_FILE` in env
 

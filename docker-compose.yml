@@ -9,6 +9,4 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - "4800:4800"
-    expose:
-      - "4800"
+      - "8080:4800"
